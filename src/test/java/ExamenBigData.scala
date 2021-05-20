@@ -16,13 +16,28 @@ object ExamenBigData {
     maListEnd_n.foreach(i => println(i))
   }
 
-  def liste_double():Unit={
-    var montableau= Array(Array("ecommercemag.fr",""),Array("https://www.journalducm.com/contact/","Payant"),Array("https://www.zatsaz.com/",""),Array("https://www.lerevenu.com/",""),
-      Array("https://www.cadre-diriogeant-magazine.com/","Payant"),Array("https://www.silicon.fr/services/contac#annoncer","Payant"),
-      Array("https://www.channelbiz.fr/nous-contacter/", ""),Array("https://www.itespresso.fr/",""),Array("https://www.industrie-mag.com/article4.html","invite"),
-      Array("https://www.jesuissundev.com/article-invite/","invite"),Array("https://www.numerama.com/",""))
+  def liste_double(): Unit ={
+    val montableau=List(
+      ("ecommercemag.fr",""),
+      ("https://www.journalducm.com/contact/","payant"),
+      ("https://www.zatsaz.com","payant"),
+      ("https://www.lerevenu.com",""),
+      ("https://www.cadre-diregeantfdeantèmagazine.com","payant"),
+      ("https://www.silicon.fr/services/contact#annoncer","payant"),
+      ("https://www.channelbiz.fr/nous-contactez/",""),
+      ("https://www.itespresso.fr/",""),
+      ("https://www.industrie-mag.com/article4.html","invité"),
+      ("https://www.jesuisundev.com","invité"),
+      ("https://www.numerama.com","")
+    )
 
-    for (i<-0 to 10; j<-0 to 1)
-      println("en "+i+","+j+" se trouve "+ (montableau(i)(j)) )
+
+    val tableau2  = montableau.map(l => {
+      if (l._1.startsWith("https://www.")){ (l._1.substring(12),l._2) }
+      else{ (l._1, l._2)}
+    }).foreach(l =>println(l))
+
   }
+
+
 }
