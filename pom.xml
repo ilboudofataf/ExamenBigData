@@ -14,3 +14,21 @@
     </properties>
 
 </project>
+
+<plugin>
+        <groupId>.org.scala-tools</groupId>
+        <artifactId>maven-scala-pulgin</artifactId>
+        <version>2.15.2</version>
+        <execusions>
+
+            <execusion>
+                <goals>
+                    <goal>complile</goal>
+                    <goal>testCompile</goal>
+                </goals>
+            </execusion>
+        </execusions>
+        <configuration>
+            <scalaVersion>2.11.8</scalaVersion>
+        </configuration>
+</pulgin>
